@@ -115,3 +115,12 @@ Repeat step 2 on the remaining 2 zookeeper containers to identify the new master
 ![](./images/failure-management.png)
 
 From the simulation above, you can see that after zookeeper3 (the initial master node) fails, one of the followers (zookeeper2) was promoted to become the new master node.
+
+
+## Tear Down
+
+Tear down in the following order:
+- To exit any publisher/subscriber sessions: press `Ctrl` + `c`
+- To exit any bash session in a docker container: press `Ctrl` + `d`
+- To close and remove the docker containers: run `docker-compose down`
+- To exit your terminal: run `exit`
