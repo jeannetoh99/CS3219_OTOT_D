@@ -7,8 +7,6 @@
 
 ## Pub-Sub messaging system using Apache Kafka
 
-<br />
-
 ### 1. Open a bash in a running kafka docker container
 
 Run `docker exec -i -t <container_name> bash`. 
@@ -21,8 +19,6 @@ docker exec -i -t kafka1 bash
 
 The above command opens a bash in the kafka1 docker container.
 
-<br />
-
 ### 2. Create a topic
 
 In the bash, run `kafka-topics.sh --create --topic <topic_name> --bootstrap-server <servers_to_connect_to>`
@@ -32,8 +28,6 @@ For example:
 ```shell script
 kafka-topics.sh --create --topic awesome-topic --bootstrap-server kafka1:9092, kafka2:9092, kafka3:9092
 ```
-
-<br />
 
 ### 3. Create a publisher and publish messages to the topic
 
@@ -47,7 +41,6 @@ kafka-console-producer.sh --topic awesome-topic --bootstrap-server kafka1:9092, 
 
 You can now publish messages to the topic by typing in the session.
 
-<br />
 
 ### 4. Create a subscriber to view messages published in the topic
 
@@ -63,7 +56,6 @@ kafka-console-consumer.sh --topic awesome-topic --from-beginning --bootstrap-ser
 
 The subscriber should now be able to view the messages published in the topic.
 
-<br />
 
 ### 5. Create more publishers and subscibers on the other kafka nodes.
 
@@ -71,19 +63,14 @@ Repeat steps 1, 3 and 4 on kafka docker containers 'kafka2' and 'kafka3'.
 
 All publishers should be able to publish to the same topic and all subscibers should be able to view messages from all publishers in the topic now.
 
-<br />
-
 ### Summary
 
 Below is an image capturing the set up and run described above.
 
 ![](images/pub-sub.png)
 
-<br />
 
 ## Management of the failure of the master node in the cluster
-
-<br />
 
 ### 1. Open a bash in each of the running zookeeper docker containers
 
@@ -96,8 +83,6 @@ docker exec -i -t zookeeper1 bash
 ```
 
 The above command opens a bash in the zookeeper1 docker container.
-
-<br />
 
 ### 2. Check the status of each of the zookeeper
 
@@ -112,8 +97,6 @@ The master node should indicate 'Mode: leader', while the other nodes will indic
 ![](./images/find-leader.png)
 
 In the screenshot above, zookeeper3 is the master node while the other 2 zookeeper nodes are followers.
-
-<br />
 
 ### 3. Simulate the failure of the master node
 
