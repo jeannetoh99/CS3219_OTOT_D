@@ -57,11 +57,11 @@ kafka-console-consumer.sh --topic awesome-topic --from-beginning --bootstrap-ser
 The subscriber should now be able to view the messages published in the topic.
 
 
-### 5. Create more publishers and subscibers on the other kafka nodes.
+### 5. Create more publishers and subscribers on the other kafka nodes.
 
 Repeat steps 1, 3 and 4 on kafka docker containers 'kafka2' and 'kafka3'. 
 
-All publishers should be able to publish to the same topic and all subscibers should be able to view messages from all publishers in the topic now.
+All publishers should be able to publish to the same topic and all subscribers should be able to view messages from all publishers in the topic now.
 
 ### Summary
 
